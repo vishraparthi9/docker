@@ -18,4 +18,6 @@ ADD index.html /usr/share/nginx/html/
 
 RUN chown -R nginx:nginx /usr/share/nginx && chown -R nginx:nginx /var/log/nginx
 
+EXPOSE 80
+
 CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
