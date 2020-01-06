@@ -14,7 +14,7 @@ RUN yum -y update && yum clean all && \
     yum install -y epel-release && yum install -y nginx && \
     rm -f /usr/share/nginx/html/en-US /usr/share/nginx/html/img /usr/share/nginx/html/index.html && \
     systemctl enable nginx.service
-ADD index.html /usr/share/nginx/html/
+COPY index.html /usr/share/nginx/html/
 
 RUN chown -R nginx:nginx /usr/share/nginx && chown -R nginx:nginx /var/log/nginx
 
