@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    app: sample-app-pod
+    type: front-end
+spec:
+  containers:
+    - name: nginx-container
+      image: local/centos7-nginx
+      imagePullPolicy: Never # Since the image is created locally with the above name: local/centos7-nginx

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-replicaset
+  labels:
+    app: sample-app
+    type: front-end
+spec:
+  template:
+    metadata:
+      name: nginx
+      labels:
+        app: sample-app
+        type: front-end
+    spec:
+      containers:
+        - name: nginx-container
+          image: local/centos7-nginx
+          imagePullPolicy: Never
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sample-app
